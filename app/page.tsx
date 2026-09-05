@@ -48,7 +48,7 @@ const faqs = [
   ['Is the ₹500 booking amount extra?', 'No. It pays for your Revenue Leak Audit and solution blueprint. If you proceed, the full ₹500 is adjusted against the ₹24,999 setup fee.'],
   ['Are calling minutes included?', 'Yes. The setup includes 300 connected launch minutes. After that you choose a transparent prepaid call pack based on your expected volume.'],
   ['Can it update our CRM?', 'Yes. The standard setup includes one CRM, calendar or webhook integration. More complex or custom systems are scoped separately before you approve anything.'],
-  ['How quickly can we go live?', 'Most standard deployments can be launched in 10–14 business days after we receive your scripts, FAQs, qualification rules and system access. Complex integrations can take longer.'],
+  ['How quickly can we go live?', 'A standard first-use-case agent can go live within 24 hours after we receive your approved script, FAQs, qualification rules and required access. Complex CRM work, multilingual flows or custom integrations may need additional time, which we confirm before you proceed.'],
 ];
 
 function formatInr(value: number) {
@@ -82,15 +82,15 @@ export default function Home() {
         <div className="shell hero-grid">
           <div className="hero-copy">
             <div className="eyebrow"><span className="live-dot" /> AI voice agents for B2B sales</div>
-            <h1>Call every lead. Qualify every buyer. <em>Book more meetings.</em></h1>
-            <p className="hero-lede">Your ElevateBox agent responds in seconds, handles first conversations and sends your team qualified, calendar-ready opportunities.</p>
+            <h1>Turn every enquiry into a <em>live sales conversation.</em></h1>
+            <p className="hero-lede">ElevateBox calls new leads in seconds, qualifies genuine buyers and sends your team the conversations most likely to become revenue.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#booking">Book your ₹500 Revenue Audit <ArrowRight size={18} /></a>
               <a className="text-link" href="#pricing">View the ₹24,999 package</a>
             </div>
             <div className="offer-snapshot"><span><b>₹500</b> to start</span><i/><span><b>₹24,999</b> complete setup</span><i/><span><b>300</b> minutes included</span></div>
             <div className="micro-proof">
-              <span><Check size={15} /> ₹500 adjusted in setup fee</span><span><Check size={15} /> No technical work for you</span><span><Check size={15} /> Go live in 10–14 days</span>
+              <span><Check size={15} /> ₹500 adjusted in setup fee</span><span><Check size={15} /> No technical work for you</span><span><Check size={15} /> Standard agent live in 24 hours</span>
             </div>
           </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       <footer><div className="shell footer-grid"><div><a className="brand footer-brand brand-logo" href="#top"><img className="brand-symbol" src="/elevatebox-mark.png" alt=""/><span className="brand-name">elevatebox</span></a><p>Voice agents built around one goal: helping B2B teams respond, qualify and book more consistently.</p></div><div><strong>Explore</strong><a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#pricing">Pricing</a></div><div><strong>Decision support</strong><a href="#proof">Why now</a><a href="#faq">FAQ</a><a href="#booking">Book your audit</a></div></div><div className="shell footer-bottom"><span>© 2026 ElevateBox. All rights reserved.</span><span>Built for practical B2B growth.</span></div></footer>
-      <a className="mobile-cta button button-primary" href="#booking">Book for ₹500 <ArrowRight size={16}/></a>
+      <div className="mobile-cta-bar"><a className="button mobile-cta-button" href="#booking"><span><small>Start with a Revenue Audit</small>Book for ₹500</span><ArrowRight size={18}/></a></div>
     </main>
   );
 }

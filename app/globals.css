@@ -297,7 +297,7 @@ footer { padding: 72px 0 24px; background: #0c1423; color: white; }
 .footer-grid strong { margin-bottom: 7px; color: #aab6c6; font-size: 10px; text-transform: uppercase; letter-spacing: .07em; }
 .footer-grid a { font-size: 12px; }
 .footer-bottom { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 20px; border-top: 1px solid #27354b; color: #718096; font-size: 10px; }
-.mobile-cta { display: none; }
+.mobile-cta-bar { display: none; }
 
 @media (max-width: 900px) {
   .split-head, .roi-grid, .comparison-grid, .faq-grid, .booking-card { grid-template-columns: 1fr; gap: 38px; }
@@ -373,8 +373,12 @@ footer { padding: 72px 0 24px; background: #0c1423; color: white; }
   .booking-section { padding-bottom: 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 38px 22px; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
-  .footer-bottom { flex-direction: column; gap: 8px; padding-bottom: 70px; }
-  .mobile-cta { position: fixed; display: inline-flex; right: 0; bottom: 0; left: 0; z-index: 60; min-height: 58px; border-radius: 0; border-top: 1px solid rgba(255,255,255,.18); box-shadow: 0 -8px 24px rgba(16,26,44,.18); }
+  .footer-bottom { flex-direction: column; gap: 8px; padding-bottom: 92px; }
+  .mobile-cta-bar { position: fixed; display: block; right: 0; bottom: 0; left: 0; z-index: 60; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); border-top: 1px solid #d8d1c3; background: rgba(255,253,248,.97); box-shadow: 0 -10px 28px rgba(16,26,44,.16); backdrop-filter: blur(14px); }
+  .mobile-cta-button { width: 100%; min-height: 58px; justify-content: space-between; padding: 8px 18px; border: 2px solid #071a38; border-radius: 13px; background: var(--lime); color: var(--navy); box-shadow: 0 7px 0 #071a38; }
+  .mobile-cta-button:hover { transform: none; }
+  .mobile-cta-button > span { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; font-size: 16px; line-height: 1.1; }
+  .mobile-cta-button small { color: #486315; font-size: 9px; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; }
 }
 
 @media (prefers-reduced-motion: reduce) {
