@@ -14,7 +14,7 @@ import {
   Headphones,
   Languages,
   PhoneCall,
-  Play,
+  Quote,
   RefreshCw,
   ShieldCheck,
   Sparkles,
@@ -30,9 +30,16 @@ const useCases = [
   { icon: Headphones, title: 'Inbound call answering', copy: 'Answers FAQs, captures the caller’s requirement and routes urgent or high-value conversations to the right person.' },
 ];
 
-const videos = [
-  { id: 'MTMfsWYGOFQ', title: 'How missed-call recovery can turn lost enquiries into booked work', source: 'Krish | AI Automation' },
-  { id: 'HGBMr1RQliY', title: 'A practical look at an AI agent that never misses a business call', source: 'Ed Hill | AI Automation' },
+const caseStories = [
+  { label: 'Inbound lead', title: 'Website enquiry → qualified demo', accent: '42 sec', metric: 'first response', copy: 'The agent calls while intent is high, confirms company size, need and timeline, then books the right salesperson.', result: 'Qualified meeting booked · Thursday, 3 PM' },
+  { label: 'Old CRM list', title: 'Dormant prospect → active opportunity', accent: '186', metric: 'leads followed up', copy: 'A respectful reactivation sequence finds buyers whose priorities changed—without pulling your team into repetitive calls.', result: '17 interested buyers surfaced for follow-up' },
+  { label: 'Missed call', title: 'After-hours caller → next-day appointment', accent: '24/7', metric: 'answering', copy: 'The agent understands the requirement, answers approved questions and secures the next step even when your office is closed.', result: 'Requirement captured · reminder sent' },
+];
+
+const testimonialExamples = [
+  { initials: 'AM', role: 'Operations head · B2B services', quote: 'The biggest win was not “AI”. It was knowing every enquiry received a consistent first conversation before our sales team stepped in.' },
+  { initials: 'RK', role: 'Founder · Industrial supplier', quote: 'It gave our salespeople a cleaner list: who is interested, what they need and when they want to speak. That is where the time saving becomes revenue.' },
+  { initials: 'PS', role: 'Growth lead · Professional services', quote: 'We could finally see which leads were being lost because of slow follow-up—and what a better calling process could recover.' },
 ];
 
 const faqs = [
@@ -61,7 +68,7 @@ export default function Home() {
         <div className="shell nav-wrap">
           <a className="brand brand-logo" href="#top" aria-label="ElevateBox home">
             <img className="brand-symbol" src="/elevatebox-mark.png" alt="" />
-            <span className="wordmark-crop"><img src="/elevatebox-wordmark.png" alt="ElevateBox" /></span>
+            <span className="brand-name">elevatebox</span>
           </a>
           <nav aria-label="Main navigation">
             <a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#proof">Why now</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
@@ -123,7 +130,7 @@ export default function Home() {
 
       <section className="section" id="use-cases">
         <div className="shell section-head centered"><span className="section-kicker">Four proven starting points</span><h2>Start with the call your team keeps postponing.</h2><p>Best when the conversation is repetitive, time-sensitive and connected to a measurable next step.</p></div>
-        <div className="shell usecase-grid">{useCases.map(({icon:Icon,title,copy})=><article className="usecase-card" key={title}><div className="icon-box"><Icon size={21}/></div><h3>{title}</h3><p>{copy}</p><span>Explore this workflow <ChevronRight size={15}/></span></article>)}</div>
+        <div className="shell usecase-grid">{useCases.map(({icon:Icon,title,copy},index)=><article className={`usecase-card usecase-${index+1}`} key={title}><div className="icon-box"><Icon size={21}/></div><span className="usecase-number">0{index+1}</span><h3>{title}</h3><p>{copy}</p><span>Explore this workflow <ChevronRight size={15}/></span></article>)}</div>
       </section>
 
       <section className="section compact-top">
@@ -136,9 +143,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section video-section">
-        <div className="shell section-head split-head light-split"><div><span className="section-kicker">See the category in action</span><h2>See the revenue problems voice agents solve.</h2></div><p>Two independent walkthroughs. Third-party educational content—not ElevateBox customer claims.</p></div>
-        <div className="shell video-grid">{videos.map(video=><article className="video-card" key={video.id}><a className="video-frame" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer" aria-label={`Watch ${video.title} on YouTube`}><img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy"/><span className="play-button"><Play size={22} fill="currentColor"/></span></a><div><span><Play size={13}/> Watch on YouTube</span><h3>{video.title}</h3><p>{video.source}</p></div></article>)}</div>
+      <section className="section story-section">
+        <div className="shell section-head split-head light-split"><div><span className="section-kicker">Picture it in your business</span><h2>Three calls that should never depend on someone being free.</h2></div><p>Instead of another software demo, see the exact journey from unanswered lead to measurable sales action.</p></div>
+        <div className="shell story-grid">{caseStories.map((story,index)=><article className={`story-card story-${index+1}`} key={story.title}><div className="story-top"><span>{story.label}</span><strong>{story.accent}<small>{story.metric}</small></strong></div><h3>{story.title}</h3><p>{story.copy}</p><div className="story-result"><BadgeCheck size={17}/><span>{story.result}</span></div></article>)}</div>
+        <div className="shell example-proof"><div className="example-proof-intro"><span className="section-kicker">Illustrative buyer perspectives</span><h3>The kind of feedback a well-built calling process should earn.</h3><p>These are example composites—not customer endorsements. Replace them with approved quotes after your first launches.</p></div><div className="testimonial-grid">{testimonialExamples.map(item=><article key={item.initials}><Quote size={20}/><p>“{item.quote}”</p><div><span>{item.initials}</span><small>{item.role}</small></div></article>)}</div></div>
       </section>
 
       <section className="section roi-section">
@@ -174,7 +182,7 @@ export default function Home() {
         <div className="shell booking-card"><div><span className="section-kicker lime-kicker">Your next step costs ₹500—not ₹24,999</span><h2>Find out exactly where a voice agent can create revenue in your business.</h2><p>Leave with a call-flow blueprint, recommended use case, minute estimate and implementation plan. If you build with ElevateBox, the ₹500 is credited in full.</p><div className="booking-points"><span><Check/>60-minute working session</span><span><Check/>Custom revenue-leak audit</span><span><Check/>No obligation to proceed</span></div></div><div className="checkout-card"><span>Reserve one strategy slot</span><div className="checkout-price"><strong>₹500</strong><small>credited toward setup</small></div><div className="checkout-line"><span>Growth audit</span><b>₹500</b></div><div className="checkout-line total"><span>Due today</span><b>₹500</b></div><button className="button button-lime" type="button" onClick={()=>setCheckoutReady(true)}>{checkoutReady?'Payment link required':'Continue to secure booking'} <ArrowRight size={17}/></button>{checkoutReady&&<p className="checkout-message">This page is ready for your Razorpay or payment-link URL. Connect it before publishing paid traffic.</p>}<small>Secure checkout integration to be connected before campaign launch.</small></div></div>
       </section>
 
-      <footer><div className="shell footer-grid"><div><a className="brand footer-brand brand-logo" href="#top"><img className="brand-symbol" src="/elevatebox-mark.png" alt=""/><span className="wordmark-crop"><img src="/elevatebox-wordmark.png" alt="ElevateBox"/></span></a><p>Voice agents built around one goal: helping B2B teams respond, qualify and book more consistently.</p></div><div><strong>Explore</strong><a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#pricing">Pricing</a></div><div><strong>Decision support</strong><a href="#proof">Why now</a><a href="#faq">FAQ</a><a href="#booking">Book your audit</a></div></div><div className="shell footer-bottom"><span>© 2026 ElevateBox. All rights reserved.</span><span>Built for practical B2B growth.</span></div></footer>
+      <footer><div className="shell footer-grid"><div><a className="brand footer-brand brand-logo" href="#top"><img className="brand-symbol" src="/elevatebox-mark.png" alt=""/><span className="brand-name">elevatebox</span></a><p>Voice agents built around one goal: helping B2B teams respond, qualify and book more consistently.</p></div><div><strong>Explore</strong><a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#pricing">Pricing</a></div><div><strong>Decision support</strong><a href="#proof">Why now</a><a href="#faq">FAQ</a><a href="#booking">Book your audit</a></div></div><div className="shell footer-bottom"><span>© 2026 ElevateBox. All rights reserved.</span><span>Built for practical B2B growth.</span></div></footer>
       <a className="mobile-cta button button-primary" href="#booking">Book for ₹500 <ArrowRight size={16}/></a>
     </main>
   );
