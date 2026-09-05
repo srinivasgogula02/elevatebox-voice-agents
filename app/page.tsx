@@ -109,16 +109,17 @@ export default function Home() {
       </section>
 
       <section className="first-proof" id="proof">
-        <div className="shell proof-grid">
-          <div><span className="section-kicker">The leak is rarely lead generation</span><h2>Your best leads are already raising their hands. They are simply waiting too long.</h2></div>
-          <div className="stat-card"><strong>24/7</strong><p>Every enquiry gets a useful conversation—even after office hours, on weekends and while your team is busy.</p></div>
-          <div className="stat-card accent-card"><strong>&lt; 60 sec</strong><p>Target first-call response for connected lead sources, so interest is still fresh when the conversation starts.</p></div>
+        <div className="shell section-head centered"><span className="section-kicker">From click to calendar</span><h2>What happens after someone shows interest?</h2><p>No technical explanation. This is the complete journey your customer experiences.</p></div>
+        <div className="shell plain-flow">
+          <article><span>01</span><div className="flow-icon"><Sparkles size={22}/></div><h3>A lead arrives</h3><p>From your ad, website, CRM or missed call.</p></article>
+          <i><ArrowRight/></i>
+          <article><span>02</span><div className="flow-icon"><PhoneCall size={22}/></div><h3>ElevateBox calls</h3><p>The conversation starts while their interest is fresh.</p></article>
+          <i><ArrowRight/></i>
+          <article><span>03</span><div className="flow-icon"><BadgeCheck size={22}/></div><h3>It checks the fit</h3><p>Need, budget, timeline and your qualification rules.</p></article>
+          <i><ArrowRight/></i>
+          <article className="flow-win"><span>04</span><div className="flow-icon"><CalendarCheck size={22}/></div><h3>Your team gets the meeting</h3><p>With the buyer’s answers, summary and next step.</p></article>
         </div>
-        <div className="shell evidence-row">
-          <div><strong>28%</strong><span>of sales reps’ time was spent selling in Salesforce’s productivity research.</span><a href="https://www.salesforce.com/news/stories/sales-research-2023/" target="_blank" rel="noreferrer">Source</a></div>
-          <div><strong>74%</strong><span>of consumers now expect customer service to be available 24/7, Zendesk reports.</span><a href="https://cxtrends.zendesk.com/" target="_blank" rel="noreferrer">Source</a></div>
-          <div><strong>1 hour</strong><span>is the follow-up window HubSpot warns sellers not to miss after qualifying a lead.</span><a href="https://blog.hubspot.com/sales/best-time-to-make-a-sales-call" target="_blank" rel="noreferrer">Source</a></div>
-        </div>
+        <div className="shell simple-outcome"><div><span>Without ElevateBox</span><strong>Lead waits → interest drops → sales chases</strong></div><ArrowRight/><div><span>With ElevateBox</span><strong>Lead called → buyer qualified → meeting booked</strong></div></div>
       </section>
 
       <section className="dark-section" id="how">
@@ -140,6 +141,13 @@ export default function Home() {
           <article className="bento orange-bento"><Zap/><h3>Calls while intent is fresh</h3><p>Trigger a conversation from forms, ads, CRM stages or call events.</p></article>
           <article className="bento"><ShieldCheck/><h3>Human guardrails</h3><p>Approved answers, escalation rules and call review before scale.</p></article>
           <article className="bento"><BarChart3/><h3>Every outcome visible</h3><p>Recordings, summaries, captured fields and next steps.</p></article>
+        </div>
+      </section>
+
+      <section className="section human-section">
+        <div className="shell human-grid">
+          <div className="human-visual"><img src="/elevatebox-sales-team.jpg" alt="A business sales team reviewing a newly qualified opportunity"/><div className="handoff-card"><span><span className="live-dot"/> READY FOR SALES</span><strong>Qualified buyer booked for 3:00 PM</strong><small>Need, timeline and call summary included</small></div></div>
+          <div className="human-copy"><span className="section-kicker lime-kicker">AI handles the repetition. People close the deal.</span><h2>Your team starts with context—not another cold lead.</h2><p>ElevateBox does the first conversation and hands over only when a real person can add value.</p><div className="human-benefits"><span><BadgeCheck/>Know what the buyer needs</span><span><Clock3/>Know when they want to act</span><span><CalendarCheck/>Meetings already on the calendar</span></div><a className="button button-lime" href="#booking">See if it fits your business <ArrowRight size={17}/></a></div>
         </div>
       </section>
 
