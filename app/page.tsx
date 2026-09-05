@@ -13,7 +13,6 @@ import {
   DatabaseZap,
   Headphones,
   Languages,
-  MessagesSquare,
   PhoneCall,
   Play,
   RefreshCw,
@@ -21,8 +20,6 @@ import {
   Sparkles,
   Target,
   TrendingUp,
-  UserRoundCheck,
-  UsersRound,
   Zap,
 } from 'lucide-react';
 
@@ -31,14 +28,11 @@ const useCases = [
   { icon: CalendarCheck, title: 'Demo & consultation booking', copy: 'Finds a suitable slot, books it on your team calendar and sends reminders so more qualified prospects actually show up.' },
   { icon: RefreshCw, title: 'Dormant lead revival', copy: 'Works through old CRM lists with a respectful, consistent follow-up sequence and surfaces renewed buying intent.' },
   { icon: Headphones, title: 'Inbound call answering', copy: 'Answers FAQs, captures the caller’s requirement and routes urgent or high-value conversations to the right person.' },
-  { icon: MessagesSquare, title: 'Quotation follow-up', copy: 'Checks whether the buyer reviewed your proposal, handles common objections and alerts your closer at the right moment.' },
-  { icon: UserRoundCheck, title: 'Customer reactivation', copy: 'Calls past customers for renewals, feedback, service reminders and relevant cross-sell opportunities.' },
 ];
 
 const videos = [
   { id: 'MTMfsWYGOFQ', title: 'How missed-call recovery can turn lost enquiries into booked work', source: 'Krish | AI Automation' },
   { id: 'HGBMr1RQliY', title: 'A practical look at an AI agent that never misses a business call', source: 'Ed Hill | AI Automation' },
-  { id: 'Mgnl-itgiWU', title: 'How a voice agent books, reschedules and cancels appointments', source: 'Shri AI | AI Automation' },
 ];
 
 const faqs = [
@@ -46,10 +40,8 @@ const faqs = [
   ['What exactly is included in the ₹24,999 setup?', 'Discovery, call strategy, one production voice agent, up to two call flows, English plus one Indian language, knowledge-base setup, calendar integration, one CRM or webhook integration, testing, launch and 14 days of optimisation.'],
   ['Is the ₹500 booking amount extra?', 'No. It pays for your Revenue Leak Audit and solution blueprint. If you proceed, the full ₹500 is adjusted against the ₹24,999 setup fee.'],
   ['Are calling minutes included?', 'Yes. The setup includes 300 connected launch minutes. After that you choose a transparent prepaid call pack based on your expected volume.'],
-  ['Can it transfer a call to our sales team?', 'Yes. We can configure warm transfer rules for qualified, urgent or high-value leads, subject to your phone and telephony setup.'],
   ['Can it update our CRM?', 'Yes. The standard setup includes one CRM, calendar or webhook integration. More complex or custom systems are scoped separately before you approve anything.'],
   ['How quickly can we go live?', 'Most standard deployments can be launched in 10–14 business days after we receive your scripts, FAQs, qualification rules and system access. Complex integrations can take longer.'],
-  ['Does AI guarantee more revenue?', 'No responsible provider can guarantee revenue. ElevateBox improves the controllable parts: response speed, contact coverage, follow-up consistency, booking and clean data. Your offer, lead quality and sales process still matter.'],
 ];
 
 function formatInr(value: number) {
@@ -67,7 +59,10 @@ export default function Home() {
     <main>
       <header className="site-header">
         <div className="shell nav-wrap">
-          <a className="brand" href="#top" aria-label="ElevateBox home"><span className="brand-mark">E</span><span>ElevateBox</span></a>
+          <a className="brand brand-logo" href="#top" aria-label="ElevateBox home">
+            <img className="brand-symbol" src="/elevatebox-mark.png" alt="" />
+            <span className="wordmark-crop"><img src="/elevatebox-wordmark.png" alt="ElevateBox" /></span>
+          </a>
           <nav aria-label="Main navigation">
             <a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#proof">Why now</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
           </nav>
@@ -79,13 +74,14 @@ export default function Home() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="shell hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="live-dot" /> Done-for-you AI calling for B2B teams</div>
-            <h1>Turn every enquiry into a <em>live sales conversation.</em></h1>
-            <p className="hero-lede">ElevateBox calls new leads, qualifies them, answers common questions and books meetings—before a competitor gets there.</p>
+            <div className="eyebrow"><span className="live-dot" /> AI voice agents for B2B sales</div>
+            <h1>Call every lead. Qualify every buyer. <em>Book more meetings.</em></h1>
+            <p className="hero-lede">Your ElevateBox agent responds in seconds, handles first conversations and sends your team qualified, calendar-ready opportunities.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#booking">Reserve your build for ₹500 <ArrowRight size={18} /></a>
-              <a className="text-link" href="#how">See exactly what you get</a>
+              <a className="button button-primary" href="#booking">Book your ₹500 Revenue Audit <ArrowRight size={18} /></a>
+              <a className="text-link" href="#pricing">View the ₹24,999 package</a>
             </div>
+            <div className="offer-snapshot"><span><b>₹500</b> to start</span><i/><span><b>₹24,999</b> complete setup</span><i/><span><b>300</b> minutes included</span></div>
             <div className="micro-proof">
               <span><Check size={15} /> ₹500 adjusted in setup fee</span><span><Check size={15} /> No technical work for you</span><span><Check size={15} /> Go live in 10–14 days</span>
             </div>
@@ -102,7 +98,7 @@ export default function Home() {
             <div className="revenue-strip"><span><TrendingUp size={17}/> Potential pipeline</span><strong>₹2,40,000</strong></div>
           </div>
         </div>
-        <div className="shell trust-strip"><span><Sparkles size={17}/> Built for revenue teams that cannot afford slow follow-up</span><span>Inbound qualification</span><span>Outbound follow-up</span><span>Appointment booking</span><span>CRM updates</span></div>
+        <div className="shell trust-strip"><span><Sparkles size={17}/> One clear outcome: more qualified sales conversations</span><span>Inbound qualification</span><span>Lead follow-up</span><span>Appointment booking</span><span>CRM updates</span></div>
       </section>
 
       <section className="first-proof" id="proof">
@@ -126,7 +122,7 @@ export default function Home() {
       </section>
 
       <section className="section" id="use-cases">
-        <div className="shell section-head centered"><span className="section-kicker">One agent. Several revenue jobs.</span><h2>Start with the call your team keeps postponing.</h2><p>ElevateBox is best when the conversation is repetitive, time-sensitive, measurable and connected to a clear next step.</p></div>
+        <div className="shell section-head centered"><span className="section-kicker">Four proven starting points</span><h2>Start with the call your team keeps postponing.</h2><p>Best when the conversation is repetitive, time-sensitive and connected to a measurable next step.</p></div>
         <div className="shell usecase-grid">{useCases.map(({icon:Icon,title,copy})=><article className="usecase-card" key={title}><div className="icon-box"><Icon size={21}/></div><h3>{title}</h3><p>{copy}</p><span>Explore this workflow <ChevronRight size={15}/></span></article>)}</div>
       </section>
 
@@ -141,8 +137,8 @@ export default function Home() {
       </section>
 
       <section className="section video-section">
-        <div className="shell section-head split-head light-split"><div><span className="section-kicker">See the category in action</span><h2>What businesses are automating right now.</h2></div><p>Independent walkthroughs showing the exact problems voice agents can solve. These videos are third-party educational content, not ElevateBox customer claims.</p></div>
-        <div className="shell video-grid">{videos.map(video=><article className="video-card" key={video.id}><div className="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${video.id}`} title={video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><div><span><Play size={13}/> Watch on YouTube</span><h3>{video.title}</h3><p>{video.source}</p></div></article>)}</div>
+        <div className="shell section-head split-head light-split"><div><span className="section-kicker">See the category in action</span><h2>See the revenue problems voice agents solve.</h2></div><p>Two independent walkthroughs. Third-party educational content—not ElevateBox customer claims.</p></div>
+        <div className="shell video-grid">{videos.map(video=><article className="video-card" key={video.id}><a className="video-frame" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer" aria-label={`Watch ${video.title} on YouTube`}><img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy"/><span className="play-button"><Play size={22} fill="currentColor"/></span></a><div><span><Play size={13}/> Watch on YouTube</span><h3>{video.title}</h3><p>{video.source}</p></div></article>)}</div>
       </section>
 
       <section className="section roi-section">
@@ -178,7 +174,7 @@ export default function Home() {
         <div className="shell booking-card"><div><span className="section-kicker lime-kicker">Your next step costs ₹500—not ₹24,999</span><h2>Find out exactly where a voice agent can create revenue in your business.</h2><p>Leave with a call-flow blueprint, recommended use case, minute estimate and implementation plan. If you build with ElevateBox, the ₹500 is credited in full.</p><div className="booking-points"><span><Check/>60-minute working session</span><span><Check/>Custom revenue-leak audit</span><span><Check/>No obligation to proceed</span></div></div><div className="checkout-card"><span>Reserve one strategy slot</span><div className="checkout-price"><strong>₹500</strong><small>credited toward setup</small></div><div className="checkout-line"><span>Growth audit</span><b>₹500</b></div><div className="checkout-line total"><span>Due today</span><b>₹500</b></div><button className="button button-lime" type="button" onClick={()=>setCheckoutReady(true)}>{checkoutReady?'Payment link required':'Continue to secure booking'} <ArrowRight size={17}/></button>{checkoutReady&&<p className="checkout-message">This page is ready for your Razorpay or payment-link URL. Connect it before publishing paid traffic.</p>}<small>Secure checkout integration to be connected before campaign launch.</small></div></div>
       </section>
 
-      <footer><div className="shell footer-grid"><div><a className="brand footer-brand" href="#top"><span className="brand-mark">E</span><span>ElevateBox</span></a><p>Voice agents built around one goal: helping B2B teams respond, qualify and book more consistently.</p></div><div><strong>Explore</strong><a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#pricing">Pricing</a></div><div><strong>Decision support</strong><a href="#proof">Why now</a><a href="#faq">FAQ</a><a href="#booking">Book your audit</a></div></div><div className="shell footer-bottom"><span>© 2026 ElevateBox. All rights reserved.</span><span>Built for practical B2B growth.</span></div></footer>
+      <footer><div className="shell footer-grid"><div><a className="brand footer-brand brand-logo" href="#top"><img className="brand-symbol" src="/elevatebox-mark.png" alt=""/><span className="wordmark-crop"><img src="/elevatebox-wordmark.png" alt="ElevateBox"/></span></a><p>Voice agents built around one goal: helping B2B teams respond, qualify and book more consistently.</p></div><div><strong>Explore</strong><a href="#how">How it works</a><a href="#use-cases">Use cases</a><a href="#pricing">Pricing</a></div><div><strong>Decision support</strong><a href="#proof">Why now</a><a href="#faq">FAQ</a><a href="#booking">Book your audit</a></div></div><div className="shell footer-bottom"><span>© 2026 ElevateBox. All rights reserved.</span><span>Built for practical B2B growth.</span></div></footer>
       <a className="mobile-cta button button-primary" href="#booking">Book for ₹500 <ArrowRight size={16}/></a>
     </main>
   );
